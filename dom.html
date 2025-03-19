@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM</title>
+    </head>
+    <body>
+        <h1 id="heading">Introduction to DOM in Javascript</h1>
+        <p id="para">
+            The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.
+        </p>
+        <img src="C:\Users\shiva\Downloads\2d8d465fcfacd26bc8235c074aa956c7.jpg" id="myimage" alt="random image">
+        <a href="www.google.com" id="mylink">Click me</a>
+        <ul id="mylist">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <P id="dateandtime"></P>
+        <button type="button" onclick="document.getElementById('dateandtime').innerHTML=Date()">Click me to display Date and Time</button>
+        <button type="button" onclick="changeHeading()">Change Heading</button>
+        <button type="button" onclick="changePara()">Change Paragraph</button>
+        <button type="button" onclick="changeImage()">Change Image</button>
+        <button type="button" onclick="changeLink()">Change Link</button>
+        <button type="button" onclick="addNewItem()">Modify List</button>
+        <button type="button" onclick="removeItem()">Remove Item</button>
+
+        <script>
+            function changeHeading(){
+                document.getElementById("heading").innerHTML = "DOM is awesome!";
+                heading.style.color = "red";
+            }
+            function changePara(){
+                document.getElementById("para").innerHTML = "The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.";
+                para.style.color = "blue";
+                para.style.fontWeight="bold";
+                para.style.fontSize="20px";
+            }
+            function changeImage(){
+                const img=document.getElementById("myimage");
+                img.src="C:\\Users\\shiva\\Downloads\\909dcf09-52e3-43a1-b0d7-ba9c146d3aa9.jpeg";
+                img.style.border="2px solid black";
+            }
+            function changeLink(){
+                document.getElementById("mylink").href="www.youtube.com";
+                document.getElementById("mylink").innerHTML="Click me to go to youtube";
+                mylink.style.color="green";
+            }
+            function addNewItem(){
+                const list=document.getElementById("mylist");
+                const newItem=document.createElement("li");
+                newItem.innerHTML="Item "+(list.children.length+1);
+                list.appendChild(newItem);
+            }
+            function removeItem(){
+                const list=document.getElementById("mylist");
+                list.removeChild(list.lastElementChild);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Events</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color: lightblue;
+                text-align: center;
+                line-height: 200px;
+            }
+        </style>
+        <script>
+            let count = 0;
+            function counting(){
+                count++;
+                document.getElementById("count").innerHTML = count;
+            }
+            function mouseDown(){
+                document.getElementById("mouseBox").style.backgroundColor = "yellow";
+                document.getElementById("mouseBox").innerHTML = "Mouse Down";
+            }
+            function mouseUp(){
+                document.getElementById("mouseBox").style.backgroundColor = "lightblue";
+                document.getElementById("mouseBox").innerHTML = "Mouse Up";
+            }
+            function mouseOver(){
+                document.getElementById("mouseBox").style.backgroundColor = "green";
+                document.getElementById("mouseBox").innerHTML = "Mouse Over";
+            }
+            function mouseOut(){
+                document.getElementById("mouseBox").style.backgroundColor = "lightblue";
+                document.getElementById("mouseBox").innerHTML = "Mouse Out";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Js Events</h1>
+         <div class="box" id="mouseBox" onmousedown="mouseDown()" onmouseup="mouseUp()" onmouseover="mouseOver()" onmouseout="mouseOut()">
+            Mouse Events in Javascript
+         </div>
+    </body>
+</html>

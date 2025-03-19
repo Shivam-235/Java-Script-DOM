@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+    <script>
+        let user = new Object();
+        let person={
+            name:"John",
+            age:30,
+            city:"New York"
+        }
+        alert(person.name);//get the property value
+        alert(person.age);
+        //change, remove, add the properties into the object
+        person.name="James";
+        alert(person.name);
+        delete person.age;
+        alert(person.age);
+        person.age=40;
+        alert(person.age);
+        person.job="Developer";
+        alert(person.job);
+        let student = {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+        };
+        /*let sum = student.a + student.b + student.c + student.d;
+        alert(sum);*/
+        let sum = 0;
+        for (let key in student) {
+            sum += student[key];
+        };
+        console.log(sum);
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
